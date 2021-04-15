@@ -18,3 +18,6 @@ export default {
   }),
 };
 </script>
+<style>
+@import "./assets/styles/Variables.css";
+</style>

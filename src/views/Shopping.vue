@@ -23,7 +23,7 @@ import LeftMenu from "../components/LeftMenu.vue";
 import RightMenu from "../components/RightMenu.vue"
 import Products from "../components/Products.vue";
 export default {
-  name: 'Home',
+  name: 'Shopping',
   components: {
     topleftnav: TopLeftNavigation,
     toprightnav: TopRightNavigation,

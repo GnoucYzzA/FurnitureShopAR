@@ -5,7 +5,7 @@
         <v-tabs-slider color="white"></v-tabs-slider>
         <v-tab>
           <v-btn dark icon>
-            <v-icon>fas fa-home</v-icon>
+            <router-link :to="{ name: 'LandingPage'}"><v-icon>fas fa-home</v-icon></router-link>
           </v-btn>
         </v-tab>
         <v-tab>
@@ -27,6 +27,10 @@ export default {
 </script>
 
 <style scoped>
+.v-application a{
+  text-decoration: none;
+  color: white;
+}
 .borderLeft {
   border-radius: 0px 50px 0px 50px !important;
 }
