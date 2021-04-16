@@ -8,18 +8,44 @@
       <div class="contentBx">
         <div class="formBx">
           <h2>Login</h2>
-          <form>
+          <form @submit.prevent="handleLogin">
             <div class="inputBx">
-              <span>Username</span>
-              <input type="text" name="username" />
+              <span>Email</span>
+              <input type="email" name="email" v-model="user.email" id="email" 
+              :class="{ 'is-invalid': submitted && $v.user.email.$error }"/>
+              <div
+                v-if="submitted && $v.user.email.$error"
+                class="invalid-feedback"
+              >
+                <span class="invalid-feedback" v-if="!$v.user.email.required">Email is required</span>
+                <span  class="invalid-feedback" v-if="!$v.user.email.email">Email is invalid</span>
+              </div>
             </div>
             <div class="inputBx">
               <span>Password</span>
-              <input type="password" name="password" />
+              <input type="password" name="password" v-model="user.password" id="password"
+              :class="{ 'is-invalid': submitted && $v.user.password.$error }" />
+              <div
+                v-if="submitted && $v.user.password.$error"
+                class="invalid-feedback"
+              >
+                <span v-if="!$v.user.password.required"
+                  >Password is required</span
+                >
+                <span v-if="!$v.user.password.minLength"
+                  >Password must be at least 6 characters</span
+                >
+              </div>
             </div>
+    
             <div class="remember">
               <label><input type="checkbox" name="" /> Remember me</label>
             </div>
+
+            <div v-if="showLog">
+              <ErrorDialog :textMsg="messages" />
+            </div>
+
             <div class="inputBx">
               <input type="submit" value="Sign in" />
             </div>
@@ -46,13 +72,54 @@
 
 <script>
 import NavBar from "@/components/layout/NavBar.vue";
+import ErrorDialog from "@/components/Dialog/ErrorDialog"
+import { required, email, minLength } from "vuelidate/lib/validators";
+import firebase from 'firebase'
 // import Footer from '@/components/layout/Footer.vue'
 export default {
   name: "Login",
   components: {
     NavBar,
+    ErrorDialog
     // Footer,
   },
+  data() {
+      return{
+          user : {
+              email: "",
+              password:"",
+          },
+          submitted: false,
+          messages: null,
+          showLog: false
+      }
+  },
+  validations: {
+    user: {
+      email: { required, email },
+      password: { required, minLength: minLength(6) },
+    }
+  },
+  methods: {
+      handleLogin(){
+          this.submitted = true
+          firebase.auth().signInWithEmailAndPassword(this.user.email, this.user.password)
+          .then(cred => {
+              console.log(cred);
+              this.$router.push({ name: 'LandingPage'})
+          }).catch(err => {
+              this.showLog = true
+              this.messages = err
+          })
+
+          //Stop here if form is invalid
+          this.$v.$touch();
+          if (this.$v.$invalid) 
+          {
+            return;
+          }
+      }
+  }
 };
 </script>
 
@@ -124,6 +191,11 @@ section .contentBx .formBx .inputBx span {
   font-size: 16px;
   letter-spacing: 1px;
 }
+section .contentBx .formBx .inputBx .invalid-feedback span {
+  font-size: 13px;
+  color: red !important;
+}
+
 section .contentBx .formBx .inputBx input {
   width: 100%;
   padding: 10px 20px;
@@ -156,6 +228,7 @@ section .contentBx .formBx .remember {
 section .contentBx .formBx p {
   color: #607d8b;
 }
+
 section .contentBx .formBx p a {
   color: #ff4584;
 }
