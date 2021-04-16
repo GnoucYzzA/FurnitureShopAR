@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 import Shopping from '../views/Shopping.vue'
 import LandingPage from '../components/home/LandingPage.vue'
 import AllProducts from '../components/AllProducts.vue'
-
+import Register from '@/components/auth/Register.vue'
+import Login from '@/components/auth/Login.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,8 +14,8 @@ const routes = [
     component: LandingPage
   },
   {
-    path: '/shop',
-    name: 'Shop',
+    path: '/allproducts',
+    name: 'AllProducts',
     component: AllProducts
   },
   {
@@ -29,7 +30,17 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
 ]
 
 const router = new VueRouter({

@@ -1,41 +1,7 @@
 <template>
   <div class="Landing">
-    <header class="l-header" id="header">
-      <nav class="nav bd-grid">
-        <div
-          class="nav__toggle"
-          id="nav-toggle"
-          @click="showMenu('nav-toggle', 'nav-menu')"
-        >
-          <i class="fas fa-th"></i>
-        </div>
-
-        <a href="#" class="nav__logo">Roby</a>
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#home" class="nav__link active">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#featured" class="nav__link">Features</a>
-            </li>
-            <li class="nav__item">
-              <a href="#women" class="nav__link">Women</a>
-            </li>
-            <li class="nav__item">
-              <a href="#new" class="nav__link">New</a>
-            </li>
-            <li class="nav__item">
-              <router-link :to="{ name: 'Shop' }" class="nav__link">Shop</router-link>
-            </li>
-          </ul>
-        </div>
-
-        <div class="nav__shop">
-          <i class="fas fa-shopping-basket"></i>
-        </div>
-      </nav>
-    </header>
+    <navbar></navbar>
+    
     <main class="l-main">
       <section class="home" id="home">
         <div class="home__container bd-grid">
@@ -251,67 +217,25 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer section">
-      <div class="footer__container bd-grid">
-        <div class="footer__box">
-          <h3 class="footer__title">Roby</h3>
-          <p class="footer__description">New Collection of furnitures 2021.</p>
-        </div>
-
-        <div class="footer__box">
-          <h3 class="footer__title">EXPLORE</h3>
-          <ul>
-              <li><router-link to="#home" class="footer__link">Home</router-link></li>
-              <li><router-link to="#featured" class="footer__link">Featured</router-link></li>
-              <li><router-link to="#women" class="footer__link">Women</router-link></li>
-              <li><router-link to="#new" class="footer__link">New</router-link></li>
-          </ul>
-        </div>
-
-        <div class="footer__box">
-          <h3 class="footer__title">SUPPORT</h3>
-          <ul>
-              <li><router-link to="#" class="footer__link">Product Help</router-link></li>
-              <li><router-link to="#" class="footer__link">Customer Care</router-link></li>
-              <li><router-link to="#" class="footer__link">Authorized service</router-link></li>
-          </ul>
-        </div>
-
-        <div class="footer__box">
-            <router-link to="#" class="footer__social"><i class="fab fa-facebook-f"></i></router-link>
-            <router-link to="#" class="footer__social"><i class="fab fa-instagram"></i></router-link>
-            <router-link to="#" class="footer__social"><i class="fab fa-twitter"></i></router-link>
-            <router-link to="#" class="footer__social"><i class="fab fa-google"></i></router-link>
-        </div>
-      </div>
-
-      <p class="footer__copy">&#169; 2021 AR Furniture. All right reserved</p>
-    </footer>
+    <Footer/>
+    
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/layout/NavBar.vue'
+import Footer from '@/components/layout/Footer.vue'
+import firebase from 'firebase'
 export default {
   name: "Landing",
-  methods: {
-    showMenu(toggleId, navId) {
-      const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId);
-
-      if (toggle && nav) {
-        toggle.addEventListener("click", () => {
-          nav.classList.toggle("show");
-        });
-      }
-    },
+  components: {
+    navbar : NavBar,
+    Footer,
   },
-  created() {
-    window.onscroll = () => {
-      const nav = document.getElementById("header");
-      if (this.scrollY >= 200) nav.classList.add("scroll-header");
-      else nav.classList.remove("scroll-header");
-    };
-  },
+  mounted() {
+    console.log(firebase.auth().currentUser)
+  }
+  
 };
 </script>
 
@@ -396,80 +320,8 @@ img {
   margin-right: var(--mb-2);
 }
 
-.l-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: var(--z-fixed);
-  background-color: var(--dark-color-lighten);
-}
-.nav {
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-@media screen and (max-width: 768px) {
-  .nav__menu {
-    position: fixed;
-    top: var(--header-height);
-    left: -100%;
-    width: 70%;
-    height: 100vh;
-    padding: 2rem;
-    background-color: var(--white-color);
-    transition: 0.5s;
-  }
-}
 
-.nav__item {
-  margin-bottom: var(--mb-4);
-}
-
-.nav__logo {
-  font-weight: var(--font-semi-bold);
-}
-
-.nav__toggle,
-.nav__shop {
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-.nav__toggle {
-  margin-left: 5px;
-}
-
-.nav__shop {
-  margin-right: 5px;
-}
-
-/* Show menu*/
-.show {
-  left: 0;
-}
-/*Active Link */
-.active {
-    position: relative;
-}
-
-.active::before{
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    left: 45%;
-    width: 4px;
-    height: 4px;
-    background-color: var(--dark-color);
-    border-radius: 50%;
-}
-/*Change color header*/
-.scroll-header {
-  background-color: var(--white-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 /* HOME */
 .home {
   background-color: var(--dark-color-lighten);
@@ -783,36 +635,8 @@ img {
   font-weight: var(--font-semi-bold);
 }
 
-/* FOOTER */
-.footer__container{
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
 
-.footer__box{
-    margin-bottom: var(--mb-4);
-}
 
-.footer__title{
-    font-size: var(--big-font-size);
-}
-
-.footer__link{
-    display: block;
-    width: max-content;
-    margin-bottom: var(--mb-1);
-}
-
-.footer__social{
-    font-size: 1.5rem;
-    margin-right: 1.25rem;
-}
-
-.footer__copy{
-    padding-top: 3rem;
-    font-size: var(--smaller-font-size);
-    color: var(--dark-color-light);
-    text-align: center;
-}
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 576px){
@@ -849,23 +673,6 @@ img {
 
     .section-title::after{
         width: 76px;
-    }
-
-    .nav{
-        height: calc(var(--header-height) + 1.5rem);
-    }
-    .nav__menu{
-        margin-left: auto;
-    }
-    .nav__list{
-        display: flex;
-    }
-    .nav__item{
-        margin-left: var(--mb-6);
-        margin-bottom: 0;
-    }
-    .nav__toggle{
-        display: none;
     }
 
     .home__container{
