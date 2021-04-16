@@ -1,47 +1,8 @@
 <template>
   <div class="allProducts">
-    <!-- HEADER -->
-    <header class="l-header" id="header">
-      <nav class="nav bd-grid">
-        <div
-          class="nav__toggle"
-          id="nav-toggle"
-          @click="showMenu('nav-toggle', 'nav-menu')"
-        >
-          <i class="fas fa-th"></i>
-        </div>
-
-        <router-link to="/" class="nav__logo">Roby</router-link>
-
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <router-link to="/">Home</router-link>
-            </li>
-            <li class="nav__item">
-              <router-link to="/">Features</router-link>
-            </li>
-            <li class="nav__item">
-              <router-link to="/">Women</router-link>
-            </li>
-            <li class="nav__item">
-              <router-link to="/">New</router-link>
-            </li>
-            <li class="nav__item">
-              <router-link to="#shop" class="nav__link active"
-                >Shop</router-link
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="nav__shop">
-          <i class="fas fa-shopping-basket"></i>
-        </div>
-      </nav>
-    </header>
-
+    <NavBar/>
     <main class="l-main">
+      
       <!-- ALL PRODUCTS -->
       <section class="featured section" id="shop">
         <h2 class="section-title">All Products</h2>
@@ -112,92 +73,19 @@
         </div>
       </section>
     </main>
+    <Footer/>
 
-    <!-- FOOTER -->
-    <!-- FOOTER -->
-    <footer class="footer section">
-      <div class="footer__container bd-grid">
-        <div class="footer__box">
-          <h3 class="footer__title">Roby</h3>
-          <p class="footer__description">New Collection of furnitures 2021.</p>
-        </div>
-
-        <div class="footer__box">
-          <h3 class="footer__title">EXPLORE</h3>
-          <ul>
-            <li>
-              <router-link to="#home" class="footer__link">Home</router-link>
-            </li>
-            <li>
-              <router-link to="#featured" class="footer__link"
-                >Featured</router-link
-              >
-            </li>
-            <li>
-              <router-link to="#women" class="footer__link">Women</router-link>
-            </li>
-            <li>
-              <router-link to="#new" class="footer__link">New</router-link>
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__box">
-          <h3 class="footer__title">SUPPORT</h3>
-          <ul>
-            <li>
-              <router-link to="#" class="footer__link"
-                >Product Help</router-link
-              >
-            </li>
-            <li>
-              <router-link to="#" class="footer__link"
-                >Customer Care</router-link
-              >
-            </li>
-            <li>
-              <router-link to="#" class="footer__link"
-                >Authorized service</router-link
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div class="footer__box">
-          <router-link to="#" class="footer__social"
-            ><i class="fab fa-facebook-f"></i
-          ></router-link>
-          <router-link to="#" class="footer__social"
-            ><i class="fab fa-instagram"></i
-          ></router-link>
-          <router-link to="#" class="footer__social"
-            ><i class="fab fa-twitter"></i
-          ></router-link>
-          <router-link to="#" class="footer__social"
-            ><i class="fab fa-google"></i
-          ></router-link>
-        </div>
-      </div>
-
-      <p class="footer__copy">&#169; 2021 AR Furniture. All right reserved</p>
-    </footer>
   </div>
 </template>
 
 <script>
+import NavBar from '@/components/layout/NavBar.vue'
+import Footer from '@/components/layout/Footer.vue'
 export default {
   name: "Shop",
-  methods: {
-    showMenu(toggleId, navId) {
-      const toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId);
-
-      if (toggle && nav) {
-        toggle.addEventListener("click", () => {
-          nav.classList.toggle("show");
-        });
-      }
-    },
+  components: {
+    NavBar,
+    Footer,
   },
 };
 </script>
@@ -271,75 +159,9 @@ img {
   margin-left: var(--mb-2);
   margin-right: var(--mb-2);
 }
-.l-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: var(--z-fixed);
-  background-color: var(--dark-color-lighten);
-}
-.nav {
-  height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-@media screen and (max-width: 768px) {
-  .nav__menu {
-    position: fixed;
-    top: var(--header-height);
-    left: -100%;
-    width: 70%;
-    height: 100vh;
-    padding: 2rem;
-    background-color: var(--white-color);
-    transition: 0.5s;
-  }
-}
 
-.nav__item {
-  margin-bottom: var(--mb-4);
-}
 
-.nav__logo {
-  font-weight: var(--font-semi-bold);
-}
-
-.nav__toggle,
-.nav__shop {
-  font-size: 1.3rem;
-  cursor: pointer;
-}
-
-.nav__toggle {
-  margin-left: 5px;
-}
-
-.nav__shop {
-  margin-right: 5px;
-}
-
-/* Show menu*/
-.show {
-  left: 0;
-}
-/*Active Link */
-.active {
-  position: relative;
-}
-
-.active::before {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  left: 45%;
-  width: 4px;
-  height: 4px;
-  background-color: var(--dark-color);
-  border-radius: 50%;
-}
 /* ====== END OF NAV ======== */
 
 /* FEATURED */
