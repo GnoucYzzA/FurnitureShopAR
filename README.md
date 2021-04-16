@@ -16,6 +16,18 @@ yarn add material-design-icons-iconfont -D
 ```
 yarn add @fortawesome/fontawesome-free -D
 ```
+## Install slugify
+```
+yarn add slugify
+```
+## Install vuelidate
+```
+yarn add vuelidate --save
+```
+## Install firebase
+```
+yarn add firebase --save
+```
 
 ### Compiles and hot-reloads for development
 ```
