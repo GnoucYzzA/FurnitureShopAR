@@ -1,13 +1,19 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import Shopping from '../views/Shopping.vue'
 import LandingPage from '../components/home/LandingPage.vue'
 import AllProducts from '../components/AllProducts.vue'
 import Register from '@/components/auth/Register.vue'
 import Login from '@/components/auth/Login.vue'
-Vue.use(VueRouter)
+import UserProfile from '@/components/profile/UserProfile.vue'
+import EditUserProfile from '@/components/action/EditUserProfile.vue'
+import NewProduct from '@/components/action/NewProduct.vue'
+import firebase from 'firebase'
 
-const routes = [
+Vue.use(Router)
+
+const router = new Router({
+ routes: [
   {
     path: '/',
     name: 'LandingPage',
@@ -24,14 +30,6 @@ const routes = [
     component: Shopping
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/register',
     name: 'Register',
     component: Register
@@ -41,12 +39,58 @@ const routes = [
     name: 'Login',
     component: Login
   },
-]
-
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+  {
+    path: '/profile/:id',
+    name: 'UserProfile',
+    component: UserProfile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/edit-profile/:id',
+    name: 'EditUserProfile',
+    component: EditUserProfile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/new-product/',
+    name: 'NewProduct',
+    component: NewProduct,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  
+  
+  ]
 })
+
+router.beforeEach((to, from, next) =>{
+  //check to see if route requires Auth
+  if(to.matched.some(rec => rec.meta.requiresAuth)){
+  //check Auth state of user
+  let user = firebase.auth().currentUser
+  if(user){
+    // user signed in, proceed to route   
+    next()
+  } else {
+    // no user signed in, redirect to login 
+    next({ name: 'Login' })
+  }
+  } else {
+    next()
+  }
+})
+
+
+
+// const router = new VueRouter({
+//   mode: 'history',
+//   base: process.env.BASE_URL,
+//   routes
+// })
 
 export default router

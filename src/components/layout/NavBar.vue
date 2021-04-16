@@ -37,7 +37,16 @@
             >
           </li>
           <li class="nav__item" v-if="user"><a @click="logout">Logout</a></li>
-          <li class="nav__item"></li>
+          <li class="nav__item">
+            <router-link
+              v-if="user_info"
+              :to="{ name: 'UserProfile', params: { id: this.user_info.id } }"
+            >
+              <span class="full-name">
+                {{ user_info.fullName }}
+              </span>
+            </router-link>
+          </li>
         </ul>
       </div>
 
@@ -262,7 +271,7 @@ ul {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .3s ease;
+  transition: 0.3s ease;
   background-color: black;
   border-radius: 50%;
 }
@@ -285,6 +294,4 @@ ul {
 .fa-pen:hover {
   color: #eee;
 }
-
-
 </style>
