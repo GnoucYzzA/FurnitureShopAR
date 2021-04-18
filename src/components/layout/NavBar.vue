@@ -20,7 +20,9 @@
             >
           </li>
           <li class="nav__item">
-            <a href="#featured" class="nav__link">Features</a>
+            <!-- <a href="#featured" class="nav__link">Features</a> -->
+             <router-link :to="{ name: 'Admin' }" class="nav__link"
+              >Admin</router-link>
           </li>
           <li class="nav__item" v-if="user">
             <!-- <a href="#women" class="nav__link">Women</a> -->

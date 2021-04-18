@@ -8,11 +8,14 @@ import Login from '@/components/auth/Login.vue'
 import UserProfile from '@/components/profile/UserProfile.vue'
 import EditUserProfile from '@/components/action/EditUserProfile.vue'
 import NewProduct from '@/components/action/NewProduct.vue'
+import Admin from '@/components/admin/Admin.vue'
+import AddProduct from '@/components/action/AddProduct.vue'
 import firebase from 'firebase'
 
 Vue.use(Router)
 
 const router = new Router({
+  mode: 'history',
  routes: [
   {
     path: '/',
@@ -59,6 +62,22 @@ const router = new Router({
     path: '/new-product/',
     name: 'NewProduct',
     component: NewProduct,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/add-product/',
+    name: 'AddProduct',
+    component: AddProduct,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: Admin,
     meta: {
       requiresAuth: true
     }

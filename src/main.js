@@ -5,6 +5,14 @@ import store from './store'
 import vuetify from './plugins/vuetify';
 import Vuelidate from 'vuelidate'
 import firebase from 'firebase'
+import jQuery from 'jquery';
+
+window.$ = window.jQuery = jQuery;
+
+import 'popper.js';
+import 'bootstrap';
+import './assets/styles/app.scss'
+
 Vue.config.productionTip = false
 Vue.use(Vuelidate)
 

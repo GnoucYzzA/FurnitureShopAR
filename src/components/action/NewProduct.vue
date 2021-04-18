@@ -2,9 +2,7 @@
   <div>
     <!-- <NavBar /> -->
     <section>
-      <div class="imgBx">
-        <img src="bg.jpg" alt="" />
-      </div>
+      <AdminSideNav/>
       <div class="contentBx">
         <div class="formBx">
           <router-link :to="{ name: 'LandingPage' }"><i class="fas fa-arrow-left fa-lg"></i></router-link>
@@ -172,6 +170,7 @@
 <script>
 // import NavBar from "@/components/layout/NavBar.vue";
 import ErrorDialog from "@/components/Dialog/ErrorDialog";
+import AdminSideNav from "@/components/layout/AdminSideNav"
 import {
   required,
   alphaNum,
@@ -187,7 +186,7 @@ const isNameValid = helpers.regex('isNameValid',/^[a-z0-9_ ]*$/i)
 export default {
   name: "Login",
   components: {
-    // NavBar,
+    AdminSideNav,
     ErrorDialog,
     // Footer,
   },

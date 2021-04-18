@@ -21,6 +21,7 @@
               Explore the new collections of sneakers
             </p>
             <router-link to="#" class="button">Explore Now</router-link>
+            
           </div>
         </div>
       </section>
