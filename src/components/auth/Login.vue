@@ -8,7 +8,7 @@
       <div class="contentBx">
         <div class="formBx">
           <h2>Login</h2>
-          <form @submit.prevent="handleLogin">
+          <form @submit.prevent="handleLogin" >
             <div class="inputBx">
               <span>Email</span>
               <input type="email" name="email" v-model="user.email" id="email" 

@@ -7,8 +7,8 @@
         <div class="home__container bd-grid">
           <div class="home__sneaker">
             <div class="home__shape"></div>
-            <img src="imghome.png" alt="" class="home__img" />
-            <!-- <iframe class="home__img" id={id} src={src} frameborder="0" width="100%" height="480"></iframe> -->
+            <!-- <img src="imghome.png" alt="" class="home__img" /> -->
+            <iframe class="home__img big__sofa" id="ac72f527-c399-4d68-a10c-38059bc4915a" src="https://www.vectary.com/viewer/v1/?model=ac72f527-c399-4d68-a10c-38059bc4915a&env=studio3" frameborder="0" width="100%" height="420px"></iframe>
           </div>
 
           <div class="home__data">
@@ -138,11 +138,11 @@
         <div class="offer__container bd-grid">
           <div class="offer__data" id="offer-text">
             <h3 class="offer__title">50% OFF</h3>
-            <p class="offer__description">In Adidas Superstar sneakers</p>
+            <p class="offer__description">All products in new collection</p>
             <router-link to="#" class="button">Shop Now</router-link>
           </div>
 
-          <img src="offert.png" alt="" class="offer__img" id="offer-img" />
+          <img src="sofa.png" alt="" class="offer__img" id="offer-img" />
         </div>
       </section>
 
@@ -351,8 +351,8 @@ img {
   position: absolute;
   top: 4rem;
   max-width: initial;
-  width: 275px;
-  transform: var(--rotate-img);
+ 
+ 
 }
 
 .home__new {
@@ -526,7 +526,7 @@ img {
 }
 
 .offer__img {
-  width: 153px;
+  width: 253px;
 }
 
 /* NEW COLLECTION */
@@ -659,6 +659,7 @@ img {
     .new__mens{
         align-items: center;
     }
+    
 
 }
 
@@ -690,10 +691,10 @@ img {
         height: 376px;
     }
     .home__img{
-        width: 470px;
+        width: 1080px;
         top: 3.5rem;
         right: 0;
-        left: -3rem;
+        left: -20rem;
     }
 
     .newsletter__container{
@@ -710,6 +711,12 @@ img {
         width: 360px;
         height: max-content;
     }
+    .big__sofa {
+  height: 350px;
+  
+}
+
+    
 }
 
 @media screen and (min-width: 1024px){
@@ -737,5 +744,27 @@ img {
     .new__mens-img{
         margin-bottom: var(--mb-6);
     }
+    .big__sofa {
+      height: 450px;
+    }
+.home__img{
+        top: 1rem;
+        right: 0;
+        left: -15rem;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+.offer__img {
+  width: 453px;
+}
+.big__sofa {
+  height: 220px;
+}
+
+}
+svg{
+  display: none;
 }
 </style>

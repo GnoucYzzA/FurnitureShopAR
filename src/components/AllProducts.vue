@@ -4,59 +4,15 @@
     <main class="l-main">
       
       <!-- ALL PRODUCTS -->
-      <section class="featured section" id="shop">
+      <section class="featured section" id="shop" v-if="products">
         <h2 class="section-title">All Products</h2>
-
-        <div class="featured__container bd-grid">
-          <article class="sneaker">
-            <img src="featured1.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Jordan</span>
-            <span class="sneaker__price">$149.99</span>
-            <router-link to="" class="button-light"
-              >Add to Cart <i class="fas fa-arrow-right button-icon"></i
-            ></router-link>
-          </article>
-
-          <article class="sneaker">
-            <img src="featured2.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Free RN</span>
-            <span class="sneaker__price">$149.99</span>
-            <router-link to="" class="button-light"
-              >Add to Cart <i class="fas fa-arrow-right button-icon"></i
-            ></router-link>
-          </article>
-
-          <article class="sneaker">
-            <img src="new2.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Jordan</span>
-            <span class="sneaker__price">$149.99</span>
-            <router-link to="" class="button-light"
-              >Add to Cart <i class="fas fa-arrow-right button-icon"></i
-            ></router-link>
-          </article>
-
-          <article class="sneaker">
-            <img src="new3.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Jordan</span>
-            <span class="sneaker__price">$149.99</span>
-            <router-link to="" class="button-light"
-              >Add to Cart <i class="fas fa-arrow-right button-icon"></i
-            ></router-link>
-          </article>
-
-          <article class="sneaker">
-            <img src="new4.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Jordan</span>
-            <span class="sneaker__price">$149.99</span>
-            <router-link to="" class="button-light"
-              >Add to Cart <i class="fas fa-arrow-right button-icon"></i
-            ></router-link>
-          </article>
-
-          <article class="sneaker">
-            <img src="new5.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Jordan</span>
-            <span class="sneaker__price">$149.99</span>
+        <div class="featured__container bd-grid" >
+          <article class="sneaker" v-for="product in products" :key="product.id">
+            <!-- <img :src="product.image" alt="" class="sneaker__img" /> -->
+            <iframe class="sneaker__img" :id="product.arID" :src="product.arURL" frameborder="0" width="100%" height="300px"></iframe>
+            <span class="sneaker__name">{{product.name}}</span>
+            <span class="sneaker__price">${{product.price}}</span>
+            
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
             ></router-link>
@@ -81,12 +37,41 @@
 <script>
 import NavBar from '@/components/layout/NavBar.vue'
 import Footer from '@/components/layout/Footer.vue'
+import db from '@/firebase/init'
 export default {
   name: "Shop",
   components: {
     NavBar,
     Footer,
   },
+  data() {
+    return{
+      products: [],
+    }
+  },
+  beforeCreate(){
+    
+    db.collection('products').get()
+    .then(snapshot =>{
+      if(snapshot){
+        snapshot.forEach(doc =>{
+          // console.log(doc.id, "=>", doc.data());
+          // let product = doc.data()
+          // product.id = doc.id 
+          this.products.push(doc.data()
+            // id: product.id,
+            // image: product.image,
+            // description: product.description,
+            // name: product.name,
+            // price: product.price,
+            // arURL: product.arURL,
+            // arID: product.arID
+          )
+          
+        })
+      }
+    })
+  }
 };
 </script>
 
@@ -167,7 +152,7 @@ img {
 /* FEATURED */
 .featured__container {
   row-gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .sneaker {
@@ -176,7 +161,7 @@ img {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  background-color: var(--dark-color-lighten);
+  /* background-color: var(--dark-color-lighten); */
   border-radius: 0.5rem;
   transition: 0.3s;
 }
@@ -194,11 +179,11 @@ img {
 }
 
 .sneaker__img {
-  width: 220px;
-  margin-top: var(--mb-3);
+  width: 400px;
+  /* margin-top: var(--mb-3);
   margin-bottom: var(--mb-6);
   transform: var(--rotate-img);
-  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2)); */
 }
 
 .sneaker__name,

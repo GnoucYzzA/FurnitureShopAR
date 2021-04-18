@@ -22,8 +22,11 @@
           <li class="nav__item">
             <a href="#featured" class="nav__link">Features</a>
           </li>
-          <li class="nav__item">
-            <a href="#women" class="nav__link">Women</a>
+          <li class="nav__item" v-if="user">
+            <!-- <a href="#women" class="nav__link">Women</a> -->
+            <router-link :to="{ name: 'NewProduct' }" class="nav__link"
+              >Add Product</router-link
+            >
           </li>
           <li class="nav__item" v-if="!user">
             <!-- <a href="#new" class="nav__link">New</a> -->
