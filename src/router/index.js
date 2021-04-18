@@ -6,7 +6,6 @@ import Register from '@/components/auth/Register.vue'
 import Login from '@/components/auth/Login.vue'
 import UserProfile from '@/components/profile/UserProfile.vue'
 import EditUserProfile from '@/components/action/EditUserProfile.vue'
-import NewProduct from '@/components/action/NewProduct.vue'
 import Admin from '@/components/admin/Admin.vue'
 import AddProduct from '@/components/action/AddProduct.vue'
 import firebase from 'firebase'
@@ -48,14 +47,6 @@ const router = new Router({
     path: '/edit-profile/:id',
     name: 'EditUserProfile',
     component: EditUserProfile,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: '/new-product/',
-    name: 'NewProduct',
-    component: NewProduct,
     meta: {
       requiresAuth: true
     }

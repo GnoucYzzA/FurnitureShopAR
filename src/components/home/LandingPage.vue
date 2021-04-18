@@ -274,7 +274,7 @@ ul {
   list-style: none;
 }
 
-.v-application a {
+ a {
   text-decoration: none;
   color: var(--dark-color);
 }

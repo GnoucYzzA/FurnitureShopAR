@@ -144,9 +144,7 @@ export default {
 </script>
 
 <style scoped>
-.v-application a {
-    color: white !important;
-}
+
 .overlay {
   position: absolute;
   top: 0;

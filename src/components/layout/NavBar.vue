@@ -26,7 +26,7 @@
           </li>
           <li class="nav__item" v-if="user">
             <!-- <a href="#women" class="nav__link">Women</a> -->
-            <router-link :to="{ name: 'NewProduct' }" class="nav__link"
+            <router-link :to="{ name: 'AddProduct' }" class="nav__link"
               >Add Product</router-link
             >
           </li>
@@ -139,7 +139,7 @@ ul {
   padding: 0;
   list-style: none;
 }
-.v-application a {
+ a {
   text-decoration: none;
   color: var(--dark-color);
 }
