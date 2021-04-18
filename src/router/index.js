@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Shopping from '../views/Shopping.vue'
 import LandingPage from '../components/home/LandingPage.vue'
 import AllProducts from '../components/AllProducts.vue'
 import Register from '@/components/auth/Register.vue'
@@ -26,11 +25,6 @@ const router = new Router({
     path: '/allproducts',
     name: 'AllProducts',
     component: AllProducts
-  },
-  {
-    path: '/store',
-    name: 'Shopping',
-    component: Shopping
   },
   {
     path: '/register',
