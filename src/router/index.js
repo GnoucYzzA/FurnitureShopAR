@@ -8,6 +8,7 @@ import UserProfile from '@/components/profile/UserProfile.vue'
 import EditUserProfile from '@/components/action/EditUserProfile.vue'
 import Admin from '@/components/admin/Admin.vue'
 import AddProduct from '@/components/action/AddProduct.vue'
+import EditProduct from '@/components/action/EditProduct.vue'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -63,6 +64,14 @@ const router = new Router({
     path: '/admin',
     name: 'Admin',
     component: Admin,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/edit-product/:product_slug',
+    name: 'EditProduct',
+    component: EditProduct,
     meta: {
       requiresAuth: true
     }

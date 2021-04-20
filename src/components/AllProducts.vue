@@ -5,7 +5,7 @@
       
       <!-- ALL PRODUCTS -->
       <section class="featured section" id="shop" v-if="products">
-        <h2 class="section-title">All Products</h2>
+        <img :src="products.image" alt="" class="sneaker__img" />
         <div class="featured__container bd-grid" >
           <article class="sneaker" v-for="product in products" :key="product.id">
             <!-- <img :src="product.image" alt="" class="sneaker__img" /> -->
@@ -58,7 +58,16 @@ export default {
           // console.log(doc.id, "=>", doc.data());
           // let product = doc.data()
           // product.id = doc.id 
-          this.products.push(doc.data()
+          this.products.push({
+            id: doc.id,
+            image: doc.data().image,
+            description: doc.data().description,
+            name: doc.data().name,
+            price: doc.data().price,
+            arURL: doc.data().arURL,
+            arID: doc.data().arID,
+            slug: doc.data().slug
+          }
             // id: product.id,
             // image: product.image,
             // description: product.description,

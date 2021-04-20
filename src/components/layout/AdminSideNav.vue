@@ -23,19 +23,19 @@
           v-if="user_info"
         >
           <div class="user-pic">
+            <router-link :to="{ name: 'EditUserProfile', params: {id: this.user_info.id }}" title=" Edit User Profile">
             <img
               class="img-responsive img-rounded"
               :src="user_info.avatar"
               alt="User picture"
             />
-            <div class="overlay">
-            <router-link :to="{ name: 'EditUserProfile', params: {id: this.user_info.id }}" class="icon" title=" Edit User Profile">
-              <i class="fas fa-pen"></i>
+                 
             </router-link>
           </div>
-          </div>
           <div class="user-info">
-            <strong>{{ user_info.fullName }}</strong>
+            <router-link :to="{ name: 'EditUserProfile', params: {id: this.user_info.id }}" title=" Edit User Profile">
+              <strong>{{ user_info.fullName }} <i class="fas fa-pen"></i></strong>
+            </router-link>
             <span class="user-role">Administrator</span>
             <span class="user-status">
               <i class="fa fa-circle"></i>
@@ -54,7 +54,6 @@
               <router-link :to="{ name : 'Admin'}">
                 <i class="fa fa-tachometer-alt"></i>
                 <span class="menu-text">Dashboard</span>
-                <span class="badge badge-pill badge-warning">New</span>
               </router-link>
             </li>
 
@@ -144,32 +143,9 @@ export default {
 </script>
 
 <style scoped>
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 20%;
-  width: 20%;
-  opacity: 0;
-  transition: 0.3s ease;
-  background-color: black;
-  border-radius: 50%;
-}
-.user-pic:hover .overlay {
-  opacity: 1;
-}
-.icon {
-  color: white;
-  font-size: 15px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  text-align: center;
+.fa-pen{
+  margin-left: .5em;
+  font-size: .8em;
 }
 .fa-pen:hover {
   color: #eee;

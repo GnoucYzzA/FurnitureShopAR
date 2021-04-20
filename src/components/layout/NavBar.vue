@@ -41,7 +41,7 @@
               >Login</router-link
             >
           </li>
-          <li class="nav__item" v-if="user"><a @click="logout">Logout</a></li>
+          <li class="nav__item" v-if="user"><a class="logout__btn" @click="logout">Logout</a></li>
           <li class="nav__item">
             <router-link
               v-if="user_info"
@@ -142,6 +142,13 @@ ul {
  a {
   text-decoration: none;
   color: var(--dark-color);
+}
+a:hover {
+  text-decoration: none;
+}
+.logout__btn{
+  text-decoration: none;
+  cursor: pointer;
 }
 .bd-grid {
   max-width: 1024px;

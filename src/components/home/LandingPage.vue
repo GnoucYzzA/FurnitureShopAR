@@ -8,7 +8,7 @@
           <div class="home__sneaker">
             <div class="home__shape"></div>
             <!-- <img src="imghome.png" alt="" class="home__img" /> -->
-            <iframe class="home__img big__sofa" id="ac72f527-c399-4d68-a10c-38059bc4915a" src="https://www.vectary.com/viewer/v1/?model=ac72f527-c399-4d68-a10c-38059bc4915a&env=studio3" frameborder="0" width="100%" height="420px"></iframe>
+            <iframe class="home__img big__house" id="79ac8dd9-6bb7-4b45-99ac-bb1704572771" src="https://www.vectary.com/viewer/v1/?model=79ac8dd9-6bb7-4b45-99ac-bb1704572771&env=studio3&showInteractionPrompt=0" frameborder="0" width="100%" height="480"></iframe>
           </div>
 
           <div class="home__data">
@@ -33,8 +33,9 @@
         <div class="featured__container bd-grid">
           <article class="sneaker">
             <div class="sneaker__sale">Sale</div>
-            <img src="featured1.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Jordan</span>
+            <!-- <img src="featured1.png" alt="" class="sneaker__img" /> -->
+            <iframe  id="d55804f9-81b6-4493-af01-611868af36bc" src="https://www.vectary.com/viewer/v1/?model=d55804f9-81b6-4493-af01-611868af36bc&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <span class="sneaker__name">Gradient Clock</span>
             <span class="sneaker__price">$149.99</span>
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
@@ -344,7 +345,7 @@ img {
   width: 220px;
   height: 220px;
   margin-top: 3rem;
-  background-color: var(--dark-color);
+  /* background-color: var(--dark-color); */
   border-radius: 50%;
 }
 
@@ -712,7 +713,7 @@ img {
         width: 360px;
         height: max-content;
     }
-    .big__sofa {
+    .big__house {
   height: 350px;
   
 }
@@ -745,7 +746,7 @@ img {
     .new__mens-img{
         margin-bottom: var(--mb-6);
     }
-    .big__sofa {
+    .big__house {
       height: 450px;
     }
 .home__img{
@@ -760,8 +761,8 @@ img {
 .offer__img {
   width: 453px;
 }
-.big__sofa {
-  height: 220px;
+.big__house {
+  height: 250px;
 }
 
 }

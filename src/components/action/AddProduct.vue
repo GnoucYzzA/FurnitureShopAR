@@ -45,7 +45,6 @@
                   class="form-control"
                   v-model="product.price"
                   id="price"
-                  placeholder="Ex: Desk"
                   required
                 />
               </div>
@@ -109,6 +108,7 @@ import ErrorDialog from '@/components/Dialog/ErrorDialog.vue'
 import AdminSideNav from "../layout/AdminSideNav.vue";
 import firebase from "firebase";
 import db from "@/firebase/init";
+import slugify from 'slugify';
 export default {
   name: "AddProduct",
   components: {
@@ -130,6 +130,7 @@ export default {
       selectedPicture: false,
       messages: null,
       showLog: false,
+      slug: null,
     };
   },
   methods: {
@@ -201,16 +202,24 @@ export default {
       // });
     },
     saveProduct(name, description, price, image, arURL, arID) {
+        // create a slug
+        this.slug = slugify(this.product.name, {
+          replacement: '-',
+          remove: /[$*_+~.()'"!\-:@]/g,
+          lower: true,
+        })
         db.collection('products').add({
             name: name,
             description: description,
             price: price,
             image: image,   
             arURL: arURL,
-            arID: arID
+            arID: arID,
+            slug: this.slug
         })
         .then(() => {
-            this.closeFormNewProduct('');
+            // this.closeFormNewProduct('');
+            this.$router.push({ name: 'Admin'})
         })
         .catch(err => {
             this.showLog = true 
