@@ -11,13 +11,14 @@
       <div class="sidebar-content">
         <!-- sidebar-brand  -->
         <div class="sidebar-item sidebar-brand">
-          <router-link :to="{ name: 'LandingPage'}">Protype</router-link>
+          <router-link class="logo-sidebar" :to="{ name: 'LandingPage'}"><img  src="LogoWhite.png" alt=""></router-link>
           <div id="close-sidebar" @click="toggleMenu">
             <i class="fas fa-times"></i>
           </div>
         </div>
         
         <!-- sidebar-header  -->
+        <!-- class="sidebar-item sidebar-header d-flex flex-nowrap" -->
         <div
           class="sidebar-item sidebar-header d-flex flex-nowrap"
           v-if="user_info"
@@ -67,10 +68,10 @@
               </router-link>
             </li>
             <li>
-              <a href="#">
-                <i class="fa fa-calendar"></i>
-                <span class="menu-text">Calendar</span>
-              </a>
+              <router-link :to="{ name: 'UserManagement'}">
+                <i class="fa fa-user"></i>
+                <span class="menu-text">User Management</span>
+              </router-link>
             </li>
             <li v-if="user">
               <a href="#" @click="logOut">
@@ -150,5 +151,17 @@ export default {
 .fa-pen:hover {
   color: #eee;
 }
+.user-pic img {
+  border-radius: 50%;
+  width: 60px !important;
+  height: 60px !important;
+}
+.sidebar-wrapper .sidebar-header .user-pic {
+  width: 70px;
+  margin-right: 14px;
+}
+.logo-sidebar img{
+  width: 200px !important;
 
+}
 </style>

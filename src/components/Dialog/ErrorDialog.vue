@@ -28,4 +28,4 @@ export default {
         color: #ff0000;
         font-size: 16px;
     }
-</style>>
+</style>

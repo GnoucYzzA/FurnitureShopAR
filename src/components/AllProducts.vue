@@ -2,12 +2,14 @@
   <div class="allProducts">
     <NavBar/>
     <main class="l-main">
-      
       <!-- ALL PRODUCTS -->
+      
       <section class="featured section" id="shop" v-if="products">
-        <img :src="products.image" alt="" class="sneaker__img" />
+        <h1 class="section-title">All Products</h1>
+        <input type="text" class="form-control bd-grid search-box" v-model="search" placeholder="search products" > 
         <div class="featured__container bd-grid" >
-          <article class="sneaker" v-for="product in products" :key="product.id">
+                  
+          <article class="sneaker" v-for="product in filteredProducts" :key="product.id">
             <!-- <img :src="product.image" alt="" class="sneaker__img" /> -->
             <iframe class="sneaker__img" :id="product.arID" :src="product.arURL" frameborder="0" width="100%" height="300px"></iframe>
             <span class="sneaker__name">{{product.name}}</span>
@@ -47,6 +49,7 @@ export default {
   data() {
     return{
       products: [],
+      search: ''
     }
   },
   beforeCreate(){
@@ -80,6 +83,13 @@ export default {
         })
       }
     })
+  },
+  computed: {
+    filteredProducts() {
+      return this.products.filter((product) => {
+        return product.name.toLowerCase().match(this.search.toLowerCase());
+      })
+    }
   }
 };
 </script>
@@ -229,36 +239,9 @@ img {
   background-color: var(--dark-color);
   color: var(--white-color);
 }
-
-/* FOOTER */
-.footer__container {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.footer__box {
-  margin-bottom: var(--mb-4);
-}
-
-.footer__title {
-  font-size: var(--big-font-size);
-}
-
-.footer__link {
-  display: block;
-  width: max-content;
-  margin-bottom: var(--mb-1);
-}
-
-.footer__social {
-  font-size: 1.5rem;
-  margin-right: 1.25rem;
-}
-
-.footer__copy {
-  padding-top: 3rem;
-  font-size: var(--smaller-font-size);
-  color: var(--dark-color-light);
-  text-align: center;
+.search-box{
+  width: 50%;
+  margin: 0 auto;
 }
 
 /* MEDIA QUERIES */

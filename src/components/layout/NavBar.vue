@@ -10,7 +10,7 @@
       </div>
 
       <router-link :to="{ name: 'LandingPage' }" class="nav__logo"
-        >Roby</router-link
+        ><img src="LogoBlack.png" alt=""></router-link
       >
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
@@ -24,12 +24,11 @@
              <router-link :to="{ name: 'Admin' }" class="nav__link"
               >Admin</router-link>
           </li>
-          <li class="nav__item" v-if="user">
-            <!-- <a href="#women" class="nav__link">Women</a> -->
+          <!-- <li class="nav__item" v-if="user">
             <router-link :to="{ name: 'AddProduct' }" class="nav__link"
               >Add Product</router-link
             >
-          </li>
+          </li> -->
           <li class="nav__item" v-if="!user">
             <!-- <a href="#new" class="nav__link">New</a> -->
             <router-link :to="{ name: 'Register' }" class="nav__link"
@@ -192,8 +191,9 @@ a:hover {
   margin-bottom: var(--mb-4);
 }
 
-.nav__logo {
-  font-weight: var(--font-semi-bold);
+.nav__logo img {
+  /* font-weight: var(--font-semi-bold); */
+  width: 150px;
 }
 
 .nav__toggle,
@@ -248,11 +248,15 @@ a:hover {
     display: flex;
   }
   .nav__item {
-    margin-left: var(--mb-6);
+    margin-left: 2em;
     margin-bottom: 0;
   }
   .nav__toggle {
     display: none;
+  }
+  .nav__logo img {
+  width: 120px;
+  margin-left: 1.1em;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -260,12 +264,18 @@ a:hover {
     margin-left: auto;
     margin-right: auto;
   }
+  .nav__logo img {
+    margin-left: 7em;
+  width: 250px;
+  }
+
 }
 /* Avatar */
 .ava-profile {
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 3px solid rgb(39, 39, 39);
 }
 .profile-pic {
   position: relative;

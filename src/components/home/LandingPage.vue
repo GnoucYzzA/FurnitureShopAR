@@ -14,11 +14,11 @@
           <div class="home__data">
             <span class="home__new">New in</span>
             <h1 class="home__title">
-              YEEZY BOOST <br />
-              SPLY - 350
+              Great Furniture <br />
+              Better Prices.
             </h1>
             <p class="home__description">
-              Explore the new collections of sneakers
+              Explore the new collections of furniture
             </p>
             <router-link to="#" class="button">Explore Now</router-link>
             
@@ -44,9 +44,10 @@
 
           <article class="sneaker">
             <div class="sneaker__sale">Sale</div>
-            <img src="featured2.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Free RN</span>
-            <span class="sneaker__price">$149.99</span>
+            <!-- <img src="featured2.png" alt="" class="sneaker__img" /> -->
+            <iframe id="242c49ea-473b-4fe2-a6ea-840b16f6b887" src="https://www.vectary.com/viewer/v1/?model=242c49ea-473b-4fe2-a6ea-840b16f6b887&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <span class="sneaker__name">Nightstand</span>
+            <span class="sneaker__price">$299.99</span>
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
             ></router-link>
@@ -54,8 +55,9 @@
 
           <article class="sneaker">
             <div class="sneaker__sale">Sale</div>
-            <img src="featured3.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Jordan</span>
+            <!-- <img src="featured3.png" alt="" class="sneaker__img" /> -->
+            <iframe id="4bfe83de-a22a-4204-a6ea-11c642ab1c93" src="https://www.vectary.com/viewer/v1/?model=4bfe83de-a22a-4204-a6ea-11c642ab1c93&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <span class="sneaker__name">Double Dresser</span>
             <span class="sneaker__price">$149.99</span>
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
