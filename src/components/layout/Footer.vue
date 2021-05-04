@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <p class="footer__copy">&#169; 2021 AR Furniture. All right reserved</p>
+    <p class="footer__copy">&#169; 2021 Roby Furniture. All right reserved</p>
   </footer>
 </template>
 

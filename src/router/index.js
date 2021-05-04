@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import LandingPage from '../components/home/LandingPage.vue'
 import AllProducts from '../components/AllProducts.vue'
-import Register from '@/components/auth/Register.vue'
+// import Register from '@/components/auth/Register.vue'
 import Login from '@/components/auth/Login.vue'
 import UserProfile from '@/components/profile/UserProfile.vue'
 import EditUserProfile from '@/components/action/EditUserProfile.vue'
@@ -27,11 +27,11 @@ const router = new Router({
     name: 'AllProducts',
     component: AllProducts
   },
-  {
-    path: '/register',
-    name: 'Register',
-    component: Register
-  },
+  // {
+  //   path: '/register',
+  //   name: 'Register',
+  //   component: Register
+  // },
   {
     path: '/login',
     name: 'Login',

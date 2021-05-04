@@ -16,10 +16,10 @@
         <ul class="nav__list">
           <li class="nav__item">
             <router-link :to="{ name: 'AllProducts' }" class="nav__link active"
-              >Products</router-link
+              >All Products</router-link
             >
           </li>
-          <li class="nav__item">
+          <li class="nav__item" v-if="user">
             <!-- <a href="#featured" class="nav__link">Features</a> -->
              <router-link :to="{ name: 'Admin' }" class="nav__link"
               >Admin</router-link>
@@ -29,14 +29,14 @@
               >Add Product</router-link
             >
           </li> -->
-          <li class="nav__item" v-if="!user">
-            <!-- <a href="#new" class="nav__link">New</a> -->
+          <!-- <li class="nav__item" v-if="!user">
+            <a href="#new" class="nav__link">New</a>
             <router-link :to="{ name: 'Register' }" class="nav__link"
               >Register</router-link
             >
-          </li>
-          <li class="nav__item" v-if="!user">
-            <router-link :to="{ name: 'Login' }" class="nav__link"
+          </li> -->
+          <li class="nav__item li__login" v-if="!user">
+            <router-link :to="{ name: 'Login' }" class="nav__link btn__login"
               >Login</router-link
             >
           </li>
@@ -315,5 +315,23 @@ a:hover {
 
 .fa-pen:hover {
   color: #eee;
+}
+.btn__login{
+  border: 1px solid black;
+  /* border-radius: 50px;
+  padding: 0.5em 2.5em 0.5em 2.5em; */
+
+  background-color: var(--dark-color);
+  color: var(--white-color) !important;
+  padding: 0.6rem 2rem;
+  font-weight: var(--font-medium);
+  border-radius: 50rem;
+  
+}
+.li__login{
+transition: 0.3s;
+}
+.li__login:hover {
+  transform: translateY(-0.25rem);
 }
 </style>

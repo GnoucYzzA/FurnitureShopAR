@@ -9,6 +9,7 @@
           <div class="row">
             <div class="form-group col-md-12">
               <h2>Product List</h2>
+              <input type="text" class="form-control bd-grid search-box" v-model="search" placeholder="search by product name" > 
               <div class="table-responsive">
                 <table
                   id="pagination-table"
@@ -18,7 +19,7 @@
                     <tr>
                       <th scope="col">Product name</th>
                       <th scope="col">Description</th>
-                      <th scope="col">Price</th>
+                      <th scope="col">Price($)</th>
                       <th scope="col">Image</th>
                       <th scope="col">AR Link</th>
                       <th scope="col">AR ID</th>
@@ -26,7 +27,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="product in products" :key="product.id">
+                    <tr v-for="product in filteredProducts" :key="product.id">
                       <td>{{ product.name }}</td>
                       <td>{{ product.description }}</td>
                       <td>{{ product.price }}</td>
@@ -79,7 +80,7 @@ export default {
   data() {
     return {
       products: [],
-
+      search: ''
     };
   },
   methods: {
@@ -144,6 +145,13 @@ export default {
       }
     });
   },
+   computed: {
+    filteredProducts() {
+      return this.products.filter((product) => {
+        return product.name.toLowerCase().match(this.search.toLowerCase());
+      })
+    }
+  }
 };
 </script>
 
@@ -154,4 +162,9 @@ a {
 table tbody tr td .product__img {
   width: 150px;
 }
+.search-box{
+  width: 50%;
+  margin: 2.5rem auto;
+}
+
 </style>

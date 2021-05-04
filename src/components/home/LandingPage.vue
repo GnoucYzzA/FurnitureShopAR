@@ -34,7 +34,7 @@
           <article class="sneaker">
             <div class="sneaker__sale">Sale</div>
             <!-- <img src="featured1.png" alt="" class="sneaker__img" /> -->
-            <iframe  id="d55804f9-81b6-4493-af01-611868af36bc" src="https://www.vectary.com/viewer/v1/?model=d55804f9-81b6-4493-af01-611868af36bc&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <iframe  id="d55804f9-81b6-4493-af01-611868af36bc" src="https://www.vectary.com/viewer/v1/?model=d55804f9-81b6-4493-af01-611868af36bc&arIcon=https://www.vectary.com/viewer/data/icons/noun_ar_2254890_ar_by_Sinistrad_from_the_Noun_Project.svg&env=studio3" frameborder="0" width="100%" height="400"></iframe>
             <span class="sneaker__name">Gradient Clock</span>
             <span class="sneaker__price">$149.99</span>
             <router-link to="" class="button-light"
@@ -45,7 +45,7 @@
           <article class="sneaker">
             <div class="sneaker__sale">Sale</div>
             <!-- <img src="featured2.png" alt="" class="sneaker__img" /> -->
-            <iframe id="242c49ea-473b-4fe2-a6ea-840b16f6b887" src="https://www.vectary.com/viewer/v1/?model=242c49ea-473b-4fe2-a6ea-840b16f6b887&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <iframe id="242c49ea-473b-4fe2-a6ea-840b16f6b887" src="https://www.vectary.com/viewer/v1/?model=242c49ea-473b-4fe2-a6ea-840b16f6b887&arIcon=https://www.vectary.com/viewer/data/icons/noun_ar_2254890_ar_by_Sinistrad_from_the_Noun_Project.svg&env=studio3" frameborder="0" width="100%" height="400"></iframe>
             <span class="sneaker__name">Nightstand</span>
             <span class="sneaker__price">$299.99</span>
             <router-link to="" class="button-light"
@@ -56,7 +56,7 @@
           <article class="sneaker">
             <div class="sneaker__sale">Sale</div>
             <!-- <img src="featured3.png" alt="" class="sneaker__img" /> -->
-            <iframe id="4bfe83de-a22a-4204-a6ea-11c642ab1c93" src="https://www.vectary.com/viewer/v1/?model=4bfe83de-a22a-4204-a6ea-11c642ab1c93&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <iframe id="4bfe83de-a22a-4204-a6ea-11c642ab1c93" src="https://www.vectary.com/viewer/v1/?model=4bfe83de-a22a-4204-a6ea-11c642ab1c93&arIcon=https://www.vectary.com/viewer/data/icons/noun_ar_2254890_ar_by_Sinistrad_from_the_Noun_Project.svg&env=studio3" frameborder="0" width="100%" height="400"></iframe>
             <span class="sneaker__name">Double Dresser</span>
             <span class="sneaker__price">$149.99</span>
             <router-link to="" class="button-light"
@@ -71,64 +71,70 @@
         <div class="collection__container bd-grid">
           <div class="collection__card">
             <div class="collection__data">
-              <h3 class="collection__name">Nike</h3>
+              <h3 class="collection__name">Fish Tank</h3>
               <p class="collection__description">New Collection 2021</p>
               <router-link to="#" class="button-light"
                 >Buy now <i class="fas fa-arrow-right button-icon"></i
               ></router-link>
             </div>
 
-            <img src="collection1.png" alt="" class="collection__img" />
+            <!-- <img src="collection1.png" alt="" class="collection__img" /> -->
+            <iframe class="collection__img" id="32531080-e354-4ff7-8a73-05b1c205f1bb" src="https://www.vectary.com/viewer/v1/?model=32531080-e354-4ff7-8a73-05b1c205f1bb&env=studio3" frameborder="0" width="100%" height="400"></iframe>
           </div>
 
           <div class="collection__card">
             <div class="collection__data">
-              <h3 class="collection__name">Addidas</h3>
+              <h3 class="collection__name">Modern Cube</h3>
               <p class="collection__description">New Collection 2021</p>
               <router-link to="#" class="button-light"
                 >Buy now <i class="fas fa-arrow-right button-icon"></i
               ></router-link>
             </div>
 
-            <img src="collection2.png" alt="" class="collection__img" />
+            <!-- <img src="collection2.png" alt="" class="collection__img" /> -->
+            <iframe class="collection__img" id="1ebcfef4-d6bf-4aea-8cf1-938a5edcdfdc" src="https://www.vectary.com/viewer/v1/?model=1ebcfef4-d6bf-4aea-8cf1-938a5edcdfdc&env=studio3" frameborder="0" width="100%" height="400"></iframe>
           </div>
         </div>
       </section>
 
       <!-- WOMEN SNEAKER -->
       <section class="women section" id="women">
-        <h2 class="section-title">WOMEN SNEAKERS</h2>
+        <h2 class="section-title">Decor</h2>
         <div class="women__container bd-grid">
           <article class="sneaker">
-            <img src="women1.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Free TR</span>
-            <span class="sneaker__price">$129.99</span>
+            <!-- <img src="women1.png" alt="" class="sneaker__img" /> -->
+            <iframe class="sneaker__img"  id="60d43700-d5d4-4765-ab60-4603374e040c" src="https://www.vectary.com/viewer/v1/?model=60d43700-d5d4-4765-ab60-4603374e040c&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <span class="sneaker__name">House Plant</span>
+            <span class="sneaker__price">$49.99</span>
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
             ></router-link>
           </article>
 
           <article class="sneaker">
-            <img src="women2.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Free TR</span>
-            <span class="sneaker__price">$129.99</span>
+            <!-- <img src="women2.png" alt="" class="sneaker__img" /> -->
+            <iframe class="sneaker__img"  id="ac72cfab-06ed-4a61-8ced-7cf9025262cc" src="https://www.vectary.com/viewer/v1/?model=ac72cfab-06ed-4a61-8ced-7cf9025262cc&env=studio3" frameborder="0" width="100%" height="400"></iframe>
+            <span class="sneaker__name">Cacticle</span>
+            <span class="sneaker__price">$29.99</span>
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
             ></router-link>
           </article>
 
           <article class="sneaker">
-            <img src="women3.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike GS Pink</span>
-            <span class="sneaker__price">$129.99</span>
+            <!-- <img src="women3.png" alt="" class="sneaker__img" /> -->
+            <iframe class="sneaker__img" id="385412d8-f696-452e-887f-3e34f82dee77" src="https://www.vectary.com/viewer/v1/?model=385412d8-f696-452e-887f-3e34f82dee77&env=studio3" frameborder="0" width="100%" height="420"></iframe>
+            <span class="sneaker__name">Bonsai</span>
+            <span class="sneaker__price">$125</span>
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
             ></router-link>
           </article>
 
           <article class="sneaker">
-            <img src="women4.png" alt="" class="sneaker__img" />
-            <span class="sneaker__name">Nike Get 5</span>
+            <!-- <img src="women4.png" alt="" class="sneaker__img" /> -->
+            <iframe class="sneaker__img"  id="f1f67f4f-6ac1-4cce-95a4-6c31c41a03a6" src="https://www.vectary.com/viewer/v1/?model=f1f67f4f-6ac1-4cce-95a4-6c31c41a03a6&env=studio3" frameborder="0" width="100%" height="420"></iframe>
+            <span class="sneaker__name">Bonsai with stand</span>
             <span class="sneaker__price">$129.99</span>
             <router-link to="" class="button-light"
               >Add to Cart <i class="fas fa-arrow-right button-icon"></i
@@ -156,37 +162,42 @@
 
         <div class="new__container bd-grid">
           <div class="new__mens">
-            <img src="new1.png" alt="" class="new__mens-img" />
-            <h3 class="new__title">Mens Shoes</h3>
-            <span class="new__price">From $79.99</span>
+            <!-- <img src="new1.png" alt="" class="new__mens-img" /> -->
+            <iframe class="new__mens-img" id="23fad73b-eb77-4479-9aff-1ba002f3554d" src="https://www.vectary.com/viewer/v1/?model=23fad73b-eb77-4479-9aff-1ba002f3554d&env=studio3&showInteractionPrompt=0" frameborder="0" width="100%" height="350"></iframe>
+            <h3 class="new__title">Bedroom</h3>
+            <span class="new__price">From $179.99</span>
             <router-link to="#" class="button-light"
               >View Collection <i class="fas fa-arrow-right button-icon"></i>
             </router-link>
           </div>
           <div class="new__sneaker">
             <div class="new__sneaker-card">
-              <img src="new2.png" alt="" class="new__sneaker-img" />
+              <img src="wardrobe.png" alt="" class="new__sneaker-img" />
+              <!-- <iframe class="new__sneaker-img" id="7a97c9f7-4283-4d9d-b4ac-91b05562e2f3" src="https://www.vectary.com/viewer/v1/?model=7a97c9f7-4283-4d9d-b4ac-91b05562e2f3&env=studio3&showInteractionPrompt=0" frameborder="0" width="100%" height="250"></iframe> -->
               <div class="new__sneaker-overlay">
                 <router-link to="#" class="button">Add to Cart</router-link>
               </div>
             </div>
 
             <div class="new__sneaker-card">
-              <img src="new3.png" alt="" class="new__sneaker-img" />
+              <img src="rocket.png" alt="" class="new__sneaker-img" />
+             <!-- <iframe class="new__sneaker-img" id="e11617fa-eff5-494a-b62a-8787004cb74b" src="https://www.vectary.com/viewer/v1/?model=e11617fa-eff5-494a-b62a-8787004cb74b&env=studio3&showInteractionPrompt=0" frameborder="0" width="100%" height="250"></iframe> -->
               <div class="new__sneaker-overlay">
                 <router-link to="#" class="button">Add to Cart</router-link>
               </div>
             </div>
 
             <div class="new__sneaker-card">
-              <img src="new4.png" alt="" class="new__sneaker-img" />
+              <img src="mirror.png" alt="" class="new__sneaker-img" />
+              <!-- <iframe class="new__sneaker-img" id="a80f3318-d370-4ce5-933d-60bb995bbe1d" src="https://www.vectary.com/viewer/v1/?model=a80f3318-d370-4ce5-933d-60bb995bbe1d&env=studio3&showInteractionPrompt=0" frameborder="0" width="100%" height="250"></iframe> -->
               <div class="new__sneaker-overlay">
                 <router-link to="#" class="button">Add to Cart</router-link>
               </div>
             </div>
 
             <div class="new__sneaker-card">
-              <img src="new5.png" alt="" class="new__sneaker-img" />
+              <img alt="phonograph" src="musicplayer.png"  class="new__sneaker-img" />
+              <!-- <iframe class="new__sneaker-img" id="560a1853-c3fe-43d1-9810-a02c3e92bcf9" src="https://www.vectary.com/viewer/v1/?model=560a1853-c3fe-43d1-9810-a02c3e92bcf9&env=studio3&showInteractionPrompt=0" frameborder="0" width="100%" height="250"></iframe> -->
               <div class="new__sneaker-overlay">
                 <router-link to="#" class="button">Add to Cart</router-link>
               </div>
@@ -222,7 +233,7 @@
 
     <!-- FOOTER -->
     <Footer/>
-    
+
   </div>
 </template>
 
@@ -439,7 +450,7 @@ img {
   width: 220px;
   margin-top: var(--mb-3);
   margin-bottom: var(--mb-6);
-  transform: var(--rotate-img);
+  /* transform: var(--rotate-img); */
   filter: drop-shadow(0 12px 8px rgba(0, 0, 0, 0.2));
 }
 
@@ -486,7 +497,7 @@ img {
   position: absolute;
   top: 0;
   right: 0;
-  width: 230px;
+  /* width: 230px; */
 }
 
 .collection__name {
@@ -579,7 +590,7 @@ img {
 }
 
 .new__sneaker-img {
-  width: 220px;
+  width: 100%;
 }
 
 .new__sneaker-overlay {

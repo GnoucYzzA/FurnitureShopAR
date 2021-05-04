@@ -198,7 +198,7 @@ img {
 }
 
 .sneaker__img {
-  width: 400px;
+  width: 300px;
   /* margin-top: var(--mb-3);
   margin-bottom: var(--mb-6);
   transform: var(--rotate-img);
@@ -317,5 +317,8 @@ img {
         margin-right: auto;
     }
 
+}
+canvas a .watermark{
+  display: none !important;
 }
 </style>
